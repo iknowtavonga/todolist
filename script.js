@@ -1,11 +1,18 @@
 let userInput = prompt("Enter 'new' if you'd like to start a new list")
 let quit = 'quit';
 let newItem = '';
-let toDoArray = [];
+const toDoArray = ['wake up', 'drink some coffee'];
 
 
-while (userInput !== 'quit') {
-    userInput = prompt('What would you like to do?')
+while (userInput !== 'quit' && userInput !== 'q') {
+    if (userInput === 'list') {
+        console.log('************');
+        for (let i = 0; i < toDoArray.length; i++) {
+            console.log(`${i}: ${toDoArray[i]}`)
+        }
+        console.log('************');
+
+    }/*
     if (userInput === 'new') {
         let newItem = prompt('Enter new todo');
         toDoArray.push(newItem);
@@ -15,6 +22,7 @@ while (userInput !== 'quit') {
         console.log(toDoArray);
         console.log('************');
         break;
-    }
+    }*/
+    userInput = prompt('What would you like to do?')
 }
 console.log('You quit the app');
