@@ -17,10 +17,15 @@ while (userInput !== 'quit' && userInput !== 'q') {
         console.log(`${newTodo} added to the list!`)
     } else if (input === 'delete') {
         // we create a prompt which stores the value of the index we'd like to delete
-        const index = prompt('Please enter an index to delete');
-        // we then create a variable which will store the deleted value. We delete by splicing the array
-        const deleted = toDoArray.splice(index, 1);
-        console.log(`Ok, deleted ${deleted[0]}`)
+        const index = parseInt(prompt('Please enter an index to delete'));
+        // this method is built in and it checks if something is not a number
+        if (!Number.isNaN(index)) {
+            /* after confirming that what was entered is indeed a number, we will then
+            then create a variable which will store the deleted value. We delete by splicing the array*/
+            const deleted = toDoArray.splice(index, 1);
+            console.log(`Ok, deleted ${deleted[0]}`)
+        }
+
     }
     /*
     if (userInput === 'new') {
