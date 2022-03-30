@@ -1,6 +1,4 @@
 let userInput = prompt("Enter 'new' if you'd like to start a new list")
-let quit = 'quit';
-let newItem = '';
 const toDoArray = ['wake up', 'drink some coffee'];
 
 
@@ -17,6 +15,12 @@ while (userInput !== 'quit' && userInput !== 'q') {
         const newTodo = prompt('What is your new todo?');
         toDoArray.push(newTodo);
         console.log(`${newTodo} added to the list!`)
+    } else if (input === 'delete') {
+        // we create a prompt which stores the value of the index we'd like to delete
+        const index = prompt('Please enter an index to delete');
+        // we then create a variable which will store the deleted value. We delete by splicing the array
+        const deleted = toDoArray.splice(index, 1);
+        console.log(`Ok, deleted ${deleted[0]}`)
     }
     /*
     if (userInput === 'new') {
