@@ -24,20 +24,10 @@ while (userInput !== 'quit' && userInput !== 'q') {
             then create a variable which will store the deleted value. We delete by splicing the array*/
             const deleted = toDoArray.splice(index, 1);
             console.log(`Ok, deleted ${deleted[0]}`)
+        } else {
+            console.log('Unknown index')
         }
-
     }
-    /*
-    if (userInput === 'new') {
-        let newItem = prompt('Enter new todo');
-        toDoArray.push(newItem);
-        console.log(`${newItem} added to the list`);
-    } else if (userInput === 'list') {
-        console.log('************');
-        console.log(toDoArray);
-        console.log('************');
-        break;
-    }*/
     userInput = prompt('What would you like to do?')
 }
 console.log('You quit the app');
